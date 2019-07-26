@@ -21,8 +21,6 @@
 
 
 def minTemperature(df,spark):
-    #TODO Please enter your code here, you are not required to use the template code below
-    #some reference: https://spark.apache.org/docs/latest/api/python/pyspark.sql.html#pyspark.sql.DataFrame
     return spark.sql("SELECT min(temperature) as mintemp from washing").first().mintemp
 
 
@@ -32,8 +30,6 @@ def minTemperature(df,spark):
 
 
 def meanTemperature(df,spark):
-    #TODO Please enter your code here, you are not required to use the template code below
-    #some reference: https://spark.apache.org/docs/latest/api/python/pyspark.sql.html#pyspark.sql.DataFrame
     return spark.sql("SELECT avg(temperature) as meantemp from washing").first().meantemp
 
 
@@ -43,8 +39,6 @@ def meanTemperature(df,spark):
 
 
 def maxTemperature(df,spark):
-    #TODO Please enter your code here, you are not required to use the template code below
-    #some reference: https://spark.apache.org/docs/latest/api/python/pyspark.sql.html#pyspark.sql.DataFrame
     return spark.sql("SELECT max(temperature) as maxtemp from washing").first().maxtemp
 
 
@@ -54,9 +48,6 @@ def maxTemperature(df,spark):
 
 
 def sdTemperature(df,spark):
-    #TODO Please enter your code here, you are not required to use the template code below
-    #some reference: https://spark.apache.org/docs/latest/api/python/pyspark.sql.html#pyspark.sql.DataFrame
-    #https://spark.apache.org/docs/2.3.0/api/sql/
     return spark.sql("SELECT stddev_pop(temperature) as sdtemp from washing").first().sdtemp
 
 
@@ -104,9 +95,6 @@ as kurtTemp from washing
 
 
 def correlationTemperatureHardness(df,spark):
-    #TODO Please enter your code here, you are not required to use the template code below
-    #some reference: https://spark.apache.org/docs/latest/api/python/pyspark.sql.html#pyspark.sql.DataFrame
-    #https://spark.apache.org/docs/2.3.0/api/sql/
     return spark.sql("SELECT corr(temperature,hardness) as temperaturehardness from washing").first().temperaturehardness
 
 

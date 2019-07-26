@@ -18,8 +18,6 @@
 
 #Please implement a function returning the number of rows in the dataframe
 def count(df,spark):
-    #TODO Please enter your code here, you are not required to use the template code below
-    #some reference: https://spark.apache.org/docs/latest/api/python/pyspark.sql.html#pyspark.sql.DataFrame
     return spark.sql('select count(*) as cnt from washing').first().cnt
 
 
@@ -29,8 +27,6 @@ def count(df,spark):
 
 
 def getNumberOfFields(df,spark):
-    #TODO Please enter your code here, you are not required to use the template code below
-    #some reference: https://spark.apache.org/docs/latest/api/python/pyspark.sql.html#pyspark.sql.DataFrame
     return len(df.columns)
 
 
@@ -40,8 +36,6 @@ def getNumberOfFields(df,spark):
 
 
 def getFieldNames(df,spark):
-    #TODO Please enter your code here, you are not required to use the template code below
-    #some reference: https://spark.apache.org/docs/latest/api/python/pyspark.sql.html#pyspark.sql.DataFrame
     return df.columns
 
 
