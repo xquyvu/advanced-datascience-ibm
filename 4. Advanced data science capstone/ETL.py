@@ -27,3 +27,9 @@ check_consistent_header(dir_path)
 
 data = load_data(dir_path, spark, delimiter=',')
 data.count()
+
+with open(r'C:\Users\vu86683\Desktop\learn\advanced-datascience-ibm\4. Advanced data science capstone\data\extracted\train.csv') as f:
+    reader = csv.reader(f, delimiter=',')
+    for i in range(10):
+        row = next(reader)
+        print(row)
