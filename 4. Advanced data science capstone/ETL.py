@@ -9,27 +9,17 @@ sc = SparkContext.getOrCreate()
 spark = SQLContext.getOrCreate(sc)
 
 # Specify directory
-dir_path = './data/extracted/Gas/'
-
-# Check consistent header
-check_consistent_header(dir_path)
+dir_path = './data/extracted/'
+train_path = dir_path + 'train.csv'
 
 # Read data
+data = read_csv_path(train_path, spark, delimiter=',')
 
-# Explore
-# df.count()
-# 3085757
+# Get the first 500k rows since we're dealing with 10gb of data
+data.createOrReplaceTempView('data')
+df = spark.sql('select * from data limit 500000')
 
 # df.show(5)
 
 # df.createOrReplaceTempView('df')
 # spark.sql("SELECT max(delivery_perc) as meantemp from df").first()
-
-data = load_data(dir_path, spark, delimiter=',')
-data.count()
-
-with open(r'C:\Users\vu86683\Desktop\learn\advanced-datascience-ibm\4. Advanced data science capstone\data\extracted\train.csv') as f:
-    reader = csv.reader(f, delimiter=',')
-    for i in range(10):
-        row = next(reader)
-        print(row)
