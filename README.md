@@ -1,2 +1,3 @@
 # advanced-datascience-ibm
- Advanced Data Science with IBM Specialization
+
+Assignments for the Advanced Data Science with IBM Specialization
